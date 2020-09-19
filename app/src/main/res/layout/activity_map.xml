@@ -1,6 +1,1147 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
+
+    <!--    <ImageView-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        app:layout_constraintRight_toRightOf="parent"-->
+    <!--        app:layout_constraintTop_toTopOf="parent"-->
+    <!--        android:src="@drawable/map"-->
+    <!--        android:scaleType="center"-->
+    <!--        />-->
+    <HorizontalScrollView
+        android:id="@+id/scroll"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ScrollView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:scaleType="center"
+                    android:src="@drawable/map"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/circle_it"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_marginRight="145dp"
+                    android:layout_marginBottom="200dp"
+                    android:background="@drawable/white_circle"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:clickable="true"
+                    android:onClick="ITOnClick"
+                    android:focusable="true">
+
+                    <TextView
+                        android:id="@+id/emoji_it"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="💻"
+                        android:textSize="40sp"
+                        app:layout_constraintBottom_toTopOf="@id/text_it"
+                        app:layout_constraintLeft_toLeftOf="@id/circle_it"
+                        app:layout_constraintRight_toRightOf="@id/circle_it"
+                        app:layout_constraintTop_toTopOf="@id/circle_it" />
+
+                    <TextView
+                        android:id="@+id/text_it"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-medium"
+                        android:text="IT"
+                        android:textColor="#000000"
+                        android:textSize="13sp"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/emoji_it" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/circle_carantine"
+                    android:layout_width="140dp"
+                    android:layout_height="140dp"
+                    android:layout_marginLeft="40dp"
+                    android:layout_marginTop="30dp"
+                    android:background="@drawable/white_circle"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:clickable="true"
+                    android:onClick="CarantineOnClick"
+                    android:focusable="true">
+
+                    <TextView
+                        android:id="@+id/text_carantine"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:elevation="3dp"
+                        android:fontFamily="sans-serif-medium"
+                        android:text="Карантин"
+                        android:textColor="#000000"
+                        android:textSize="13sp"
+                        app:layout_constraintLeft_toLeftOf="@id/circle_carantine"
+                        app:layout_constraintRight_toRightOf="@id/circle_carantine"
+                        app:layout_constraintTop_toBottomOf="@id/emoji_carantin" />
+
+                    <TextView
+                        android:id="@+id/emoji_carantin"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="35dp"
+                        android:text="😷"
+                        android:textSize="40sp"
+                        app:layout_constraintBottom_toTopOf="@id/text_carantine"
+                        app:layout_constraintLeft_toLeftOf="@id/circle_carantine"
+                        app:layout_constraintRight_toRightOf="@id/circle_carantine"
+                        app:layout_constraintTop_toTopOf="@id/circle_carantine" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/circle_car"
+                    android:layout_width="88dp"
+                    android:layout_height="88dp"
+                    android:layout_marginLeft="80dp"
+                    android:layout_marginBottom="210dp"
+                    android:background="@drawable/white_circle"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:clickable="true"
+                    android:onClick="AutoOnClick"
+                    android:focusable="true">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingBottom="30dp"
+                        android:text="🚗"
+                        android:textSize="40sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/circle_movie"
+                    android:layout_width="140dp"
+                    android:layout_height="140dp"
+                    android:layout_marginLeft="700dp"
+                    android:layout_marginBottom="200dp"
+                    android:background="@drawable/white_circle"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:clickable="true"
+                    android:onClick="MovieOnClick"
+                    android:focusable="true">
+
+                    <TextView
+                        android:id="@+id/emoji_movie"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="35dp"
+                        android:text="🍿"
+                        android:textSize="40sp"
+                        app:layout_constraintBottom_toTopOf="@id/text_movie"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/text_movie"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:elevation="3dp"
+                        android:fontFamily="sans-serif-medium"
+                        android:text="Кино"
+                        android:textColor="#000000"
+                        android:textSize="13sp"
+                        app:layout_constraintLeft_toLeftOf="@id/circle_movie"
+                        app:layout_constraintRight_toRightOf="@id/circle_movie"
+                        app:layout_constraintTop_toBottomOf="@id/emoji_movie" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/circle_headphones"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_marginLeft="1000dp"
+                    android:layout_marginBottom="140dp"
+                    android:background="@drawable/white_circle"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:clickable="true"
+                    android:onClick="MusicOnClick"
+                    android:focusable="true">
+
+                    <TextView
+                        android:id="@+id/emoji_headphones"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="🎧️"
+                        android:textSize="36sp"
+                        app:layout_constraintBottom_toTopOf="@id/text_headphones"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/text_headphones"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:elevation="3dp"
+                        android:fontFamily="sans-serif-medium"
+                        android:text="Музыка"
+                        android:textColor="#000000"
+                        android:textSize="13sp"
+                        app:layout_constraintLeft_toLeftOf="@id/circle_headphones"
+                        app:layout_constraintRight_toRightOf="@id/circle_headphones"
+                        app:layout_constraintTop_toBottomOf="@id/emoji_headphones" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/circle_photo"
+                    android:layout_width="140dp"
+                    android:layout_height="140dp"
+                    android:layout_marginLeft="450dp"
+                    android:layout_marginTop="300dp"
+                    android:background="@drawable/white_circle"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:clickable="true"
+                    android:onClick="PhotoOnClick"
+                    android:focusable="true">
+
+                    <TextView
+                        android:id="@+id/emoji_photo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="35dp"
+                        android:text="📷"
+                        android:textSize="40sp"
+                        app:layout_constraintBottom_toTopOf="@id/text_photo"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/text_photo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:elevation="3dp"
+                        android:fontFamily="sans-serif-medium"
+                        android:text="Фото"
+                        android:textColor="#000000"
+                        android:textSize="13sp"
+                        app:layout_constraintLeft_toLeftOf="@id/circle_photo"
+                        app:layout_constraintRight_toRightOf="@id/circle_photo"
+                        app:layout_constraintTop_toBottomOf="@id/emoji_photo" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/circle_autemn"
+                    android:layout_width="88dp"
+                    android:layout_height="88dp"
+                    android:layout_marginLeft="700dp"
+                    android:layout_marginTop="330dp"
+                    android:background="@drawable/white_circle"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:clickable="true"
+                    android:onClick="AutumnOnClick"
+                    android:focusable="true">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="🍂"
+                        android:textSize="40sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/circle_art"
+                    android:layout_width="140dp"
+                    android:layout_height="140dp"
+                    android:layout_marginLeft="600dp"
+                    android:layout_marginTop="550dp"
+                    android:background="@drawable/white_circle"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:clickable="true"
+                    android:onClick="ArtOnClick"
+                    android:focusable="true">
+
+                    <TextView
+                        android:id="@+id/emoji_art"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="35dp"
+                        android:text="🎨"
+                        android:textSize="40sp"
+                        app:layout_constraintBottom_toTopOf="@id/text_art"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/text_art"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:elevation="3dp"
+                        android:fontFamily="sans-serif-medium"
+                        android:text="Искусство"
+                        android:textColor="#000000"
+                        android:textSize="13sp"
+                        app:layout_constraintLeft_toLeftOf="@id/circle_art"
+                        app:layout_constraintRight_toRightOf="@id/circle_art"
+                        app:layout_constraintTop_toBottomOf="@id/emoji_art" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/circle_humor"
+                    android:layout_width="140dp"
+                    android:layout_height="140dp"
+                    android:layout_marginLeft="400dp"
+                    android:layout_marginBottom="650dp"
+                    android:background="@drawable/white_circle"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:clickable="true"
+                    android:onClick="HumorOnClick"
+                    android:focusable="true">
+
+                    <TextView
+                        android:id="@+id/emoji_humor"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="35dp"
+                        android:text="🎭"
+                        android:textSize="40sp"
+                        app:layout_constraintBottom_toTopOf="@id/text_humor"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/text_humor"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:elevation="3dp"
+                        android:fontFamily="sans-serif-medium"
+                        android:text="Юмор"
+                        android:textColor="#000000"
+                        android:textSize="13sp"
+                        app:layout_constraintLeft_toLeftOf="@id/circle_humor"
+                        app:layout_constraintRight_toRightOf="@id/circle_humor"
+                        app:layout_constraintTop_toBottomOf="@id/emoji_humor" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/circle_games"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_marginLeft="640dp"
+                    android:layout_marginBottom="580dp"
+                    android:background="@drawable/white_circle"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:clickable="true"
+                    android:onClick="GamesOnClick"
+                    android:focusable="true">
+
+                    <TextView
+                        android:id="@+id/emoji_games"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="🕹"
+                        android:textSize="40sp"
+                        app:layout_constraintBottom_toTopOf="@id/text_games"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/text_games"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:elevation="3dp"
+                        android:fontFamily="sans-serif-medium"
+                        android:text="Игры"
+                        android:textColor="#000000"
+                        android:textSize="13sp"
+                        app:layout_constraintLeft_toLeftOf="@id/circle_games"
+                        app:layout_constraintRight_toRightOf="@id/circle_games"
+                        app:layout_constraintTop_toBottomOf="@id/emoji_games" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/circle_work"
+                    android:layout_width="88dp"
+                    android:layout_height="88dp"
+                    android:layout_marginLeft="600dp"
+                    android:layout_marginBottom="780dp"
+                    android:background="@drawable/white_circle"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:clickable="true"
+                    android:onClick="WorkOnClick"
+                    android:focusable="true">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="👔"
+                        android:textSize="40sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </ScrollView>
+    </HorizontalScrollView>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/expand_menu"
+        android:layout_width="match_parent"
+        android:layout_height="154dp"
+        android:background="@drawable/bottom_menu"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="36dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="14dp"
+            android:layout_marginRight="16dp"
+            android:background="@drawable/search_settings"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+
+
+            >
+
+            <ImageView
+                android:layout_width="14dp"
+                android:layout_height="14dp"
+                android:layout_marginLeft="13dp"
+                android:layout_marginTop="11dp"
+                android:src="@drawable/ic_search"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="36dp"
+                android:layout_marginTop="8.5dp"
+                android:text="Поиск по темам и настроению"
+                android:textColor="#818C99"
+                android:textSize="16sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+
+
+                />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <HorizontalScrollView
+            android:id="@+id/hscroll"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="96dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent">
+
+                <TextView
+                    android:id="@+id/map_headphones"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginTop="4dp"
+                    android:background="@drawable/scrolling_mood"
+                    android:paddingLeft="17dp"
+                    android:paddingTop="15dp"
+                    android:text="🎧"
+                    android:textSize="24sp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="Музыка"
+                    android:textColor="#000000"
+                    android:textSize="12sp"
+                    app:layout_constraintLeft_toLeftOf="@id/map_headphones"
+                    app:layout_constraintRight_toRightOf="@id/map_headphones"
+                    app:layout_constraintTop_toBottomOf="@id/map_headphones" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:background="@drawable/white_circle"
+                    android:elevation="2dp"
+                    app:layout_constraintLeft_toLeftOf="@id/map_headphones"
+                    app:layout_constraintTop_toTopOf="@id/map_headphones">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="1.5dp"
+                        android:text="😃"
+                        android:textSize="14sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <TextView
+                    android:id="@+id/map_autemn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginTop="4dp"
+                    android:background="@drawable/scrolling_mood"
+                    android:paddingLeft="17dp"
+                    android:paddingTop="15dp"
+                    android:text="🍂"
+                    android:textSize="24sp"
+                    app:layout_constraintLeft_toRightOf="@id/map_movies"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="Осень"
+                    android:textColor="#000000"
+                    android:textSize="12sp"
+                    app:layout_constraintLeft_toLeftOf="@id/map_autemn"
+                    app:layout_constraintRight_toRightOf="@id/map_autemn"
+                    app:layout_constraintTop_toBottomOf="@id/map_autemn" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:background="@drawable/white_circle"
+                    android:elevation="2dp"
+                    app:layout_constraintLeft_toLeftOf="@id/map_autemn"
+                    app:layout_constraintTop_toTopOf="@id/map_autemn">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="1.5dp"
+                        android:text="😌"
+                        android:textSize="14sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <TextView
+                    android:id="@+id/map_movies"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginTop="4dp"
+                    android:background="@drawable/scrolling_mood"
+                    android:paddingLeft="17dp"
+                    android:paddingTop="15dp"
+                    android:text="🍿"
+                    android:textSize="24sp"
+                    app:layout_constraintLeft_toRightOf="@id/map_headphones"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="Фильмы"
+                    android:textColor="#000000"
+                    android:textSize="12sp"
+                    app:layout_constraintLeft_toLeftOf="@id/map_movies"
+                    app:layout_constraintRight_toRightOf="@id/map_movies"
+                    app:layout_constraintTop_toBottomOf="@id/map_movies" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:background="@drawable/white_circle"
+                    android:elevation="2dp"
+                    app:layout_constraintLeft_toLeftOf="@id/map_movies"
+                    app:layout_constraintTop_toTopOf="@id/map_movies">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="1.5dp"
+                        android:text="😃"
+                        android:textSize="14sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <TextView
+                    android:id="@+id/map_work"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginTop="4dp"
+                    android:background="@drawable/scrolling_mood"
+                    android:paddingLeft="17dp"
+                    android:paddingTop="15dp"
+                    android:text="👔"
+                    android:textSize="24sp"
+                    app:layout_constraintLeft_toRightOf="@id/map_autemn"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="Работа"
+                    android:textColor="#000000"
+                    android:textSize="12sp"
+                    app:layout_constraintLeft_toLeftOf="@id/map_work"
+                    app:layout_constraintRight_toRightOf="@id/map_work"
+                    app:layout_constraintTop_toBottomOf="@id/map_work" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:background="@drawable/white_circle"
+                    android:elevation="2dp"
+                    app:layout_constraintLeft_toLeftOf="@id/map_work"
+                    app:layout_constraintTop_toTopOf="@id/map_work">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="1.5dp"
+                        android:text="😜"
+                        android:textSize="14sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <TextView
+                    android:id="@+id/map_carantine"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginTop="4dp"
+                    android:background="@drawable/scrolling_mood"
+                    android:paddingLeft="17dp"
+                    android:paddingTop="15dp"
+                    android:text="😷"
+                    android:textSize="24sp"
+                    app:layout_constraintLeft_toRightOf="@id/map_work"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="Карантин"
+                    android:textColor="#000000"
+                    android:textSize="12sp"
+                    app:layout_constraintLeft_toLeftOf="@id/map_carantine"
+                    app:layout_constraintRight_toRightOf="@id/map_carantine"
+                    app:layout_constraintTop_toBottomOf="@id/map_carantine" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:background="@drawable/white_circle"
+                    android:elevation="2dp"
+                    app:layout_constraintLeft_toLeftOf="@id/map_carantine"
+                    app:layout_constraintTop_toTopOf="@id/map_carantine">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="1.5dp"
+                        android:text="😐"
+                        android:textSize="14sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <TextView
+                    android:id="@+id/map_it"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginTop="4dp"
+                    android:background="@drawable/scrolling_mood"
+                    android:paddingLeft="17dp"
+                    android:paddingTop="15dp"
+                    android:text="💻"
+                    android:textSize="24sp"
+                    app:layout_constraintLeft_toRightOf="@id/map_carantine"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="IT"
+                    android:textColor="#000000"
+                    android:textSize="12sp"
+                    app:layout_constraintLeft_toLeftOf="@id/map_it"
+                    app:layout_constraintRight_toRightOf="@id/map_it"
+                    app:layout_constraintTop_toBottomOf="@id/map_it" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:background="@drawable/white_circle"
+                    android:elevation="2dp"
+                    app:layout_constraintLeft_toLeftOf="@id/map_it"
+                    app:layout_constraintTop_toTopOf="@id/map_it">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="1.5dp"
+                        android:text="😐"
+                        android:textSize="14sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <TextView
+                    android:id="@+id/map_auto"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginTop="4dp"
+                    android:background="@drawable/scrolling_mood"
+                    android:paddingLeft="17dp"
+                    android:paddingTop="15dp"
+                    android:text="🚗"
+                    android:textSize="24sp"
+                    app:layout_constraintLeft_toRightOf="@id/map_it"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="Авто"
+                    android:textColor="#000000"
+                    android:textSize="12sp"
+                    app:layout_constraintLeft_toLeftOf="@id/map_auto"
+                    app:layout_constraintRight_toRightOf="@id/map_auto"
+                    app:layout_constraintTop_toBottomOf="@id/map_auto" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:background="@drawable/white_circle"
+                    android:elevation="2dp"
+                    app:layout_constraintLeft_toLeftOf="@id/map_auto"
+                    app:layout_constraintTop_toTopOf="@id/map_auto">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="1.5dp"
+                        android:text="😃"
+                        android:textSize="14sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <TextView
+                    android:id="@+id/map_games"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginTop="4dp"
+                    android:background="@drawable/scrolling_mood"
+                    android:paddingLeft="17dp"
+                    android:paddingTop="15dp"
+                    android:text="🕹️"
+                    android:textSize="24sp"
+                    app:layout_constraintLeft_toRightOf="@id/map_auto"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="Игра"
+                    android:textColor="#000000"
+                    android:textSize="12sp"
+                    app:layout_constraintLeft_toLeftOf="@id/map_games"
+                    app:layout_constraintRight_toRightOf="@id/map_games"
+                    app:layout_constraintTop_toBottomOf="@id/map_games" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:background="@drawable/white_circle"
+                    android:elevation="2dp"
+                    app:layout_constraintLeft_toLeftOf="@id/map_games"
+                    app:layout_constraintTop_toTopOf="@id/map_games">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="1.5dp"
+                        android:text="😜"
+                        android:textSize="14sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <TextView
+                    android:id="@+id/map_art"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginTop="4dp"
+                    android:background="@drawable/scrolling_mood"
+                    android:paddingLeft="17dp"
+                    android:paddingTop="15dp"
+                    android:text="🎨"
+                    android:textSize="24sp"
+                    app:layout_constraintLeft_toRightOf="@id/map_games"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="Искусство"
+                    android:textColor="#000000"
+                    android:textSize="12sp"
+                    app:layout_constraintLeft_toLeftOf="@id/map_art"
+                    app:layout_constraintRight_toRightOf="@id/map_art"
+                    app:layout_constraintTop_toBottomOf="@id/map_art" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:background="@drawable/white_circle"
+                    android:elevation="2dp"
+                    app:layout_constraintLeft_toLeftOf="@id/map_art"
+                    app:layout_constraintTop_toTopOf="@id/map_art">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="1.5dp"
+                        android:text="😌"
+                        android:textSize="14sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <TextView
+                    android:id="@+id/map_humor"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginTop="4dp"
+                    android:background="@drawable/scrolling_mood"
+                    android:paddingLeft="17dp"
+                    android:paddingTop="15dp"
+                    android:text="🎭"
+                    android:textSize="24sp"
+                    app:layout_constraintLeft_toRightOf="@id/map_art"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="Юмор"
+                    android:textColor="#000000"
+                    android:textSize="12sp"
+                    app:layout_constraintLeft_toLeftOf="@id/map_humor"
+                    app:layout_constraintRight_toRightOf="@id/map_humor"
+                    app:layout_constraintTop_toBottomOf="@id/map_humor" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:background="@drawable/white_circle"
+                    android:elevation="2dp"
+                    app:layout_constraintLeft_toLeftOf="@id/map_humor"
+                    app:layout_constraintTop_toTopOf="@id/map_humor">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="1.5dp"
+                        android:text="😜"
+                        android:textSize="14sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <TextView
+                    android:id="@+id/map_photo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginTop="4dp"
+                    android:background="@drawable/scrolling_mood"
+                    android:paddingLeft="17dp"
+                    android:paddingTop="15dp"
+                    android:text="📷"
+                    android:textSize="24sp"
+                    app:layout_constraintLeft_toRightOf="@id/map_humor"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="Фотографии"
+                    android:textColor="#000000"
+                    android:textSize="12sp"
+                    app:layout_constraintLeft_toLeftOf="@id/map_photo"
+                    app:layout_constraintRight_toRightOf="@id/map_photo"
+                    app:layout_constraintTop_toBottomOf="@id/map_photo" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:background="@drawable/white_circle"
+                    android:elevation="2dp"
+                    app:layout_constraintLeft_toLeftOf="@id/map_photo"
+                    app:layout_constraintTop_toTopOf="@id/map_photo">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="1.5dp"
+                        android:text="😌"
+                        android:textSize="14sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!--    stop scrolling-->
+        </HorizontalScrollView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginRight="12dp"
+        android:background="@drawable/x_button"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_x"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_marginRight="8dp"
+        android:background="@drawable/white_circle"
+        app:layout_constraintBottom_toTopOf="@id/expand_menu"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingBottom="2dp"
+            android:text="😃"
+            android:textSize="22sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_marginLeft="8dp"
+        android:background="@drawable/white_circle"
+        app:layout_constraintBottom_toTopOf="@id/expand_menu"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingBottom="2dp"
+            android:text="🙁"
+            android:textSize="22sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/white_circle"
+        app:layout_constraintBottom_toTopOf="@id/expand_menu"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingBottom="2dp"
+            android:text="😴"
+            android:textSize="22sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/white_circle"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingBottom="2dp"
+            android:text="😜"
+            android:textSize="22sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

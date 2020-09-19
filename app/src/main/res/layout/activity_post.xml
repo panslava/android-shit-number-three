@@ -1,6 +1,280 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#12000000">
+<ImageView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintLeft_toLeftOf="parent"
+    android:src="@drawable/tab_bar_container1"
+    android:scaleType="centerCrop"
+    />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/post_theme"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:background="#ffffff"
+        >
+
+        <ImageView
+            android:id="@+id/post_back"
+            android:layout_width="18dp"
+            android:layout_height="16dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:layout_marginLeft="19dp"
+            android:src="@drawable/ic_back"
+            android:clickable="true"
+            android:focusable="true"
+            android:onClick="onBack"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toRightOf="@id/post_back"
+            app:layout_constraintTop_toTopOf="@id/post_back"
+            app:layout_constraintBottom_toBottomOf="@+id/post_back"
+            android:layout_marginLeft="27dp"
+            android:textColor="#000000"
+            android:textStyle="bold"
+            android:textSize="23sp"
+            android:text="Искусство"
+            />
+
+        <View
+            android:layout_marginTop="20dp"
+            app:layout_constraintTop_toBottomOf="@id/post_back"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_width="match_parent"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:background="#12000000"
+            android:layout_height="1dp"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/first_post"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/post_theme"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#ffffff"
+        >
+        
+        <ImageView
+            android:id="@+id/post_avatar"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="14dp"
+            android:src="@drawable/avatar1"
+            />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toRightOf="@id/post_avatar"
+            app:layout_constraintTop_toTopOf="@id/post_avatar"
+            app:layout_constraintBottom_toBottomOf="@id/post_avatar">
+        <TextView
+            android:id="@+id/post_name"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginLeft="12dp"
+            android:text="Игорь"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:textColor="#2C2D2E"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+            <TextView
+                app:layout_constraintTop_toBottomOf="@id/post_name"
+                app:layout_constraintLeft_toLeftOf="@id/post_name"
+                android:text="только что"
+                android:textColor="#818C99"
+                android:textSize="14sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        
+        <ImageView
+            android:layout_width="12dp"
+            android:layout_height="24dp"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@id/post_avatar"
+            android:layout_marginRight="12dp"
+            android:src="@drawable/ic_more1"
+            />
+        <TextView
+            android:id="@+id/post_text"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/post_avatar"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginRight="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="12dp"
+            android:textSize="15sp"
+
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="«Убийство Роджера Экройда» (англ. The Murder of Roger Ackroyd) — детективный
+             роман Агаты Кристи, опубликованный в 1926 году. Является шестым изданным романом
+              писательницы и третьим, в котором фигурирует детектив Эркюль Пуаро. "
+            android:textColor="#000000"/>
+
+        <View
+            android:id="@+id/second_view"
+            android:layout_marginTop="16dp"
+            app:layout_constraintTop_toBottomOf="@id/post_text"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_width="match_parent"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:background="#12000000"
+            android:layout_height="1dp"/>
+        <ImageView
+            android:id="@+id/post_heart"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/second_view"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_heart"
+            />
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_share"
+            app:layout_constraintLeft_toRightOf="@id/post_heart"
+            app:layout_constraintTop_toTopOf="@id/post_heart"
+            android:layout_marginLeft="24dp"
+            />
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/first_post"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:background="#ffffff"
+        >
+
+        <ImageView
+            android:id="@+id/post_avatar1"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="14dp"
+            android:src="@drawable/avatar1"
+            />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toRightOf="@id/post_avatar1"
+            app:layout_constraintTop_toTopOf="@id/post_avatar1"
+            app:layout_constraintBottom_toBottomOf="@id/post_avatar1">
+            <TextView
+                android:id="@+id/post_name1"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginLeft="12dp"
+                android:text="Игорь"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:textColor="#2C2D2E"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                app:layout_constraintTop_toBottomOf="@id/post_name1"
+                app:layout_constraintLeft_toLeftOf="@id/post_name1"
+                android:text="только что"
+                android:textColor="#818C99"
+                android:textSize="14sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <ImageView
+            android:layout_width="12dp"
+            android:layout_height="24dp"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@id/post_avatar1"
+            android:layout_marginRight="12dp"
+            android:src="@drawable/ic_more1"
+            />
+        <TextView
+            android:id="@+id/post_text1"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/post_avatar1"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginRight="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="12dp"
+            android:textSize="15sp"
+
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="«Убийство Роджера Экройда» (англ. The Murder of Roger Ackroyd) — детективный
+             роман Агаты Кристи, опубликованный в 1926 году. Является шестым изданным романом
+              писательницы и третьим, в котором фигурирует детектив Эркюль Пуаро. "
+            android:textColor="#000000"/>
+
+        <View
+            android:id="@+id/second_view1"
+            android:layout_marginTop="16dp"
+            app:layout_constraintTop_toBottomOf="@id/post_text1"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_width="match_parent"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:background="#12000000"
+            android:layout_height="1dp"/>
+        <ImageView
+            android:id="@+id/post_heart1"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/second_view1"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_heart"
+            />
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_share"
+            app:layout_constraintLeft_toRightOf="@id/post_heart1"
+            app:layout_constraintTop_toTopOf="@id/post_heart1"
+            android:layout_marginLeft="24dp"
+            />
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

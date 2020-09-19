@@ -9,13 +9,26 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity"  android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+        <activity android:name=".MapActivity"  android:theme="@style/Theme.AppCompat.Light.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity android:name=".ITActivity"  android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+        <activity android:name=".MainActivity"  android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+        <activity android:name=".AutoActivity"  android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+        <activity android:name=".PhotoActivity"  android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+        <activity android:name=".ArtActivity"  android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+        <activity android:name=".GamesActivity"  android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+        <activity android:name=".AutumnActivity"  android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+        <activity android:name=".CarantineActivity"  android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+        <activity android:name=".WorkActivity"  android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+        <activity android:name=".MovieActivity"  android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+        <activity android:name=".HumorActivity"  android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+
     </application>
 
 </manifest>

@@ -7,11 +7,21 @@
     android:background="#ecedf1"
     tools:context=".MainActivity">
 
-
+   <ImageView
+       android:id="@+id/top_menu"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       app:layout_constraintTop_toTopOf="parent"
+       app:layout_constraintLeft_toLeftOf="parent"
+       android:src="@drawable/default_header"
+       android:scaleType="centerCrop"
+       />
+    
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/first_post"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/top_menu"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         tools:layout_editor_absoluteX="205dp"
@@ -19,7 +29,7 @@
         android:layout_marginRight="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginTop="10dp"
-        android:elevation="2dp"
+        android:elevation="1dp"
         android:background="@drawable/round_corners"
         >
         <ImageView
@@ -80,7 +90,6 @@
             android:layout_marginBottom="10dp"
             android:layout_marginTop="14dp"
             android:layout_marginLeft="12dp"
-            marginbo
             android:src="@drawable/ic_heart"/>
 
         <ImageView
@@ -92,7 +101,7 @@
             android:src="@drawable/ic_share"
             android:layout_marginLeft="24dp"
             />
-        
+
         <ImageView
             android:layout_width="16dp"
             android:layout_height="16dp"
@@ -108,4 +117,136 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 
+    <androidx.constraintlayout.widget.ConstraintLayout
+
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/first_post"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginRight="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="10dp"
+        android:elevation="1dp"
+        android:background="@drawable/round_corners"
+        >
+        <ImageView
+            android:id="@+id/main_profileImg1"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:src="@drawable/profile_image"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_marginTop="8dp"
+            android:layout_marginStart="12dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Artem Ka"
+            android:textColor="#000000"
+            android:textSize="13sp"
+            app:layout_constraintBottom_toBottomOf="@+id/main_profileImg1"
+            app:layout_constraintLeft_toRightOf="@id/main_profileImg1"
+            app:layout_constraintTop_toTopOf="@+id/main_profileImg1"
+            android:layout_marginLeft="8dp"
+            />
+
+
+        <ImageView
+            android:id="@+id/post_image1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/post_image"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/main_profileImg1"
+            android:layout_marginTop="8dp"
+            android:scaleType="centerCrop"/>
+
+        <TextView
+            android:id="@+id/text_comments1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            android:text="15 комментариев"
+            android:textSize="13sp"
+            android:textColor="#35000000"
+            app:layout_constraintTop_toBottomOf="@id/post_image1"
+            android:layout_marginTop="8dp"
+            android:layout_marginLeft="12dp"
+
+            />
+
+        <ImageView
+            android:id="@+id/ic_like1"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/text_comments1"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="14dp"
+            android:layout_marginLeft="12dp"
+            android:src="@drawable/ic_heart"/>
+
+        <ImageView
+            android:id="@+id/ic_share1"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            app:layout_constraintLeft_toRightOf="@+id/ic_like1"
+            app:layout_constraintTop_toTopOf="@id/ic_like1"
+            android:src="@drawable/ic_share"
+            android:layout_marginLeft="24dp"
+            />
+
+        <ImageView
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:src="@drawable/ic_more"
+            app:layout_constraintTop_toTopOf="@id/ic_like1"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginRight="16dp"
+            android:layout_marginLeft="228dp"
+
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:outlineProvider="none"
+        android:layout_width="44dp"
+        android:layout_height="44dp"
+        app:layout_constraintBottom_toTopOf="@id/menu"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@drawable/rounder"
+        android:layout_marginRight="12dp"
+        android:layout_marginBottom="12dp"
+        android:elevation="3dp"
+        >
+
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:src="@drawable/ic_world"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <ImageView
+        android:id="@+id/menu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/tab_bar_container1"
+        android:elevation="2dp"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
