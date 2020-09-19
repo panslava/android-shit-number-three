@@ -11,6 +11,11 @@ class MapActivity : AppCompatActivity() {
         setContentView(R.layout.activity_map)
     }
 
+    fun MainOnClick(view: View) {
+        val intent = Intent(this, MainActivity::class.java)
+        startActivity(intent)
+    }
+
     fun ITOnClick(view: View) {
         val intent = Intent(this, ITActivity::class.java)
         startActivity(intent)

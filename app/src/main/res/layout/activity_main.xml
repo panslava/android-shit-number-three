@@ -225,6 +225,9 @@
         android:layout_marginRight="12dp"
         android:layout_marginBottom="12dp"
         android:elevation="3dp"
+        android:clickable="true"
+        android:onClick="MapOnClick"
+        android:focusable="true"
         >
 
         <ImageView
